@@ -78,4 +78,71 @@
         <p>&copy; 2024 Webie </p>
     </footer>
 </body>
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #notes {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: none;
+            font-size: 16px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Your Editable Notes</h1>
+<textarea id="notes" placeholder="Write your notes here..."></textarea>
+<button id="saveButton">Save Notes</button>
+
+<script>
+    const notesElement = document.getElementById('notes');
+    const saveButton = document.getElementById('saveButton');
+
+    // Load notes from Local Storage when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        const savedNotes = localStorage.getItem('userNotes');
+        if (savedNotes) {
+            notesElement.value = savedNotes;
+        }
+    });
+
+    // Save the notes to Local Storage when the button is clicked
+    saveButton.addEventListener('click', function() {
+        const notes = notesElement.value;
+        localStorage.setItem('userNotes', notes);
+        alert('Notes saved!');
+    });
+</script>
+
+</body>
 </html>
+    </main>
+    <footer>
+        <p>&copy; 2024 Webie </p>
+    </footer>
+</body
